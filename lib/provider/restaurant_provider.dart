@@ -84,7 +84,7 @@ class RestaurantProvider extends ChangeNotifier {
         _state = ResultState.NoHasData;
         notifyListeners();
 
-        return _message = 'Restaurant ditemukan!';
+        return _message = 'Restaurant tidak ditemukan!';
       } else {
         _state = ResultState.HasData;
         notifyListeners();

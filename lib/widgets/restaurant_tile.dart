@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/common/navigation.dart';
+import '../utilities/navigation.dart';
 import 'package:restaurant_app/pages/detail_page.dart';
-import 'package:restaurant_app/common/style.dart';
+import '../utilities/style.dart';
 
 class RestaurantTile extends StatelessWidget {
   final String id;

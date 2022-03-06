@@ -1,0 +1,21 @@
+{
+  "myRestaurant": "Restoran Saya",
+  "searchRestaurant": "Cari Restoran",
+  "popularRestaurant": "Restoran Populer",
+  "detailRestaurant": "Detail Restoran",
+  "description": "Deskripsi",
+  "showReviewButton": "Lihat Ulasan",
+  "foodList": "Daftar Makanan",
+  "drinkList": "Daftar Minuman",
+  "createReview": "Buat Ulasan",
+  "reviewTextLabel1": "Nama",
+  "reviewTextLabel2": "Ulasan",
+  "submitButton": "Kirim",
+  "favorite": "Favorit",
+  "settings": "Pengaturan",
+  "language": "Bahasa",
+  "schedulingDailyReminder": "Pengingat Harian",
+  "connectionErrorMessage": "Koneksi Internet Terputus",
+  "notFoundDataMessage": "Data tidak ditemukan!",
+  "notFoundSearchMessage": "Pencarian tidak di temukan"
+}

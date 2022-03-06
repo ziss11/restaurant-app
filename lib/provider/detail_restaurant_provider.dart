@@ -9,6 +9,7 @@ class DetailRestaurantProvider extends ChangeNotifier {
   final String id;
 
   DetailRestaurant? _detailRestaurant;
+  Review? _review;
   String? _message;
   DetailState? _state;
 
@@ -17,8 +18,14 @@ class DetailRestaurantProvider extends ChangeNotifier {
   }
 
   DetailRestaurant get detailRestaurant => _detailRestaurant!;
+  Review get review => _review!;
   String get message => _message!;
   DetailState get state => _state!;
+
+  set review(Review review) {
+    _review = review;
+    notifyListeners();
+  }
 
   Future<dynamic> _getDetailRestaurant(String id) async {
     try {
@@ -33,6 +40,11 @@ class DetailRestaurantProvider extends ChangeNotifier {
         _state = DetailState.HasData;
         notifyListeners();
 
+        _review = Review(
+          error: false,
+          message: 'Success',
+          customerReviews: detailRestaurant.restaurant.customerReviews,
+        );
         return _detailRestaurant = detailRestaurant;
       }
     } catch (e) {

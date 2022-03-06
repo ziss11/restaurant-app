@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:restaurant_app/common/style.dart';
 import 'package:restaurant_app/data/service/api_service.dart';
 import 'package:restaurant_app/provider/restaurant_provider.dart';
+import 'package:restaurant_app/utilities/common.dart';
 import 'package:restaurant_app/widgets/custom_textfield.dart';
 import 'package:restaurant_app/widgets/restaurant_tile.dart';
 import 'package:restaurant_app/widgets/skeleton_container.dart';
+
+import '../utilities/style.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -28,7 +30,7 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomTextField(
-                hint: 'Cari Restaurant',
+                hint: AppLocalizations.of(context)!.searchRestaurant,
                 icon: Icon(
                   Icons.search_rounded,
                   color: greyColor,
@@ -42,7 +44,7 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
               Text(
-                'Popular Restaurant',
+                AppLocalizations.of(context)!.popularRestaurant,
                 style: blackText.copyWith(
                   fontSize: 22,
                   fontWeight: semiBold,
@@ -173,7 +175,7 @@ class _HomePageState extends State<HomePage> {
                           size: 200,
                         ),
                         Text(
-                          state.message,
+                          AppLocalizations.of(context)!.notFoundSearchMessage,
                           style: blackText.copyWith(
                             fontSize: 16,
                             fontWeight: medium,

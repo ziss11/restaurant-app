@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:restaurant_app/common/style.dart';
 import 'package:restaurant_app/provider/preference_provider.dart';
 import 'package:restaurant_app/provider/scheduling_provider.dart';
+import 'package:restaurant_app/utilities/common.dart';
+import 'package:restaurant_app/widgets/lang_select.dart';
+import '../utilities/style.dart';
 
 class SettingPage extends StatefulWidget {
   @override
@@ -38,12 +40,14 @@ class _SettingPageState extends State<SettingPage> {
                   SizedBox(
                     width: 10,
                   ),
-                  Text(
-                    'Scheduling Daily Reminder',
-                    overflow: TextOverflow.clip,
-                    style: blackText.copyWith(
-                      fontSize: 16,
-                      fontWeight: medium,
+                  Expanded(
+                    flex: 3,
+                    child: Text(
+                      AppLocalizations.of(context)!.schedulingDailyReminder,
+                      style: blackText.copyWith(
+                        fontSize: 14,
+                        fontWeight: medium,
+                      ),
                     ),
                   ),
                   Spacer(),
@@ -61,6 +65,10 @@ class _SettingPageState extends State<SettingPage> {
                   ),
                 ],
               ),
+              Divider(
+                height: 10,
+              ),
+              LanguageSelect(),
               Divider(
                 height: 10,
               ),

@@ -15,33 +15,27 @@ class ReviewProvider extends ChangeNotifier {
     required this.apiService,
   });
 
-  Review get customerReview => _customerReview!;
+  Review get customerReview =>
+      _customerReview == null ? Review.fromJson({}) : _customerReview!;
   String get message => _message!;
   ReviewState get state => _state!;
 
-  Future<dynamic> addReview(String id, String name, String review) async {
+  Future<Review> addReview(String id, String name, String review) async {
     try {
       _state = ReviewState.Loading;
       notifyListeners();
 
       final customerReview = await apiService.addReview(id, name, review);
 
-      if (customerReview.customerReviews.isEmpty) {
-        _state = ReviewState.NoHasData;
-        notifyListeners();
+      _state = ReviewState.HasData;
+      notifyListeners();
 
-        return _message = 'Belum ada review untuk restaurant ini.';
-      } else {
-        _state = ReviewState.HasData;
-        notifyListeners();
-
-        return _customerReview = customerReview;
-      }
+      return _customerReview = customerReview;
     } catch (e) {
       _state = ReviewState.HasError;
       notifyListeners();
 
-      return _message = e.toString();
+      throw _message = e.toString();
     }
   }
 }

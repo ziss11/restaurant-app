@@ -32,23 +32,21 @@ class ApiService {
 
   Future<Review> addReview(String id, String name, String review) async {
     final apiURL = 'https://restaurant-api.dicoding.dev/review';
-    final response =
-        await http.post(Uri.parse(apiURL), headers: <String, String>{
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'X-Auth-Token': '12345',
-    }, body: {
-      "id": id,
-      "name": name,
-      "review": review,
-    });
+    try {
+      final response =
+          await http.post(Uri.parse(apiURL), headers: <String, String>{
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'X-Auth-Token': '12345',
+      }, body: {
+        "id": id,
+        "name": name,
+        "review": review,
+      });
 
-    final jsonObject = jsonDecode(response.body);
+      final jsonObject = jsonDecode(response.body);
 
-    if (response.statusCode == 200) {
-      print(response.statusCode);
       return Review.fromJson(jsonObject);
-    } else {
-      print(response.statusCode);
+    } catch (e) {
       throw Exception('Data tidak berhasil di tambahkan!');
     }
   }

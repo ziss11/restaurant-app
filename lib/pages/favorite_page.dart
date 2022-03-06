@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:restaurant_app/common/style.dart';
 import 'package:restaurant_app/provider/database_provider.dart';
 import 'package:restaurant_app/widgets/restaurant_tile.dart';
 import 'package:restaurant_app/widgets/skeleton_container.dart';
+
+import '../utilities/style.dart';
 
 class FavoritePage extends StatelessWidget {
   @override

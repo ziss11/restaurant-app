@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/common/style.dart';
+import '../utilities/style.dart';
 
 class MenuTile extends StatelessWidget {
   final String text;
