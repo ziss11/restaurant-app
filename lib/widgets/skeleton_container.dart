@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/common/style.dart';
+import '../utilities/style.dart';
 import 'package:skeleton_text/skeleton_text.dart';
 
 class SkeletonContainer extends StatelessWidget {

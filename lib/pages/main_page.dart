@@ -6,8 +6,10 @@ import 'package:restaurant_app/pages/favorite_page.dart';
 import 'package:restaurant_app/pages/home_page.dart';
 import 'package:restaurant_app/pages/setting_page.dart';
 import 'package:restaurant_app/provider/page_provider.dart';
-import 'package:restaurant_app/common/style.dart';
+import 'package:restaurant_app/utilities/common.dart';
 import 'package:restaurant_app/widgets/custom_navbar.dart';
+
+import '../utilities/style.dart';
 
 class MainPage extends StatefulWidget {
   static const routeName = '/main';
@@ -52,10 +54,10 @@ class _MainPageState extends State<MainPage> {
                 flexibleSpace: FlexibleSpaceBar(
                   title: Text(
                     state.currentIndex == 0
-                        ? 'My Restaurant'
+                        ? AppLocalizations.of(context)!.myRestaurant
                         : state.currentIndex == 1
-                            ? 'Favorite'
-                            : 'Settings',
+                            ? AppLocalizations.of(context)!.favorite
+                            : AppLocalizations.of(context)!.settings,
                     style: blackText.copyWith(
                       fontWeight: semiBold,
                       fontSize: 22,

@@ -137,8 +137,8 @@ class Review {
   final List<CustomerReview> customerReviews;
 
   factory Review.fromJson(Map<String, dynamic> json) => Review(
-        error: json["error"],
-        message: json["message"],
+        error: json["error"] ?? false,
+        message: json["message"] ?? "",
         customerReviews: List<CustomerReview>.from(
             json["customerReviews"].map((x) => CustomerReview.fromJson(x))),
       );
@@ -163,9 +163,9 @@ class CustomerReview {
   final String date;
 
   factory CustomerReview.fromJson(Map<String, dynamic> json) => CustomerReview(
-        name: json["name"],
-        review: json["review"],
-        date: json["date"],
+        name: json["name"] ?? "",
+        review: json["review"] ?? "",
+        date: json["date"] ?? "",
       );
 
   Map<String, dynamic> toJson() => {

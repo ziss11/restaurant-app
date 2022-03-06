@@ -1,0 +1,21 @@
+{
+  "myRestaurant": "My Restaurant",
+  "searchRestaurant": "Search Restaurant",
+  "popularRestaurant": "Popular Restaurant",
+  "detailRestaurant": "Restaurant Details",
+  "description": "Description",
+  "showReviewButton": "Show Review",
+  "foodList": "Food List",
+  "drinkList": "Drink List",
+  "createReview": "Create Review",
+  "reviewTextLabel1": "Name",
+  "reviewTextLabel2": "Ulasan",
+  "submitButton": "Submit",
+  "favorite": "Favorite",
+  "settings": "Settings",
+  "language": "Language",
+  "schedulingDailyReminder": "Scheduling Daily Reminder",
+  "connectionErrorMessage": "internet Connection Lost",
+  "notFoundDataMessage": "Data not Found!",
+  "notFoundSearchMessage": "Search not Found"
+}

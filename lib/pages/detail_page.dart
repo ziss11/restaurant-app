@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:loading_indicator/loading_indicator.dart';
 import 'package:provider/provider.dart';
-import 'package:restaurant_app/common/style.dart';
 import 'package:restaurant_app/data/model/list_restaurant.dart';
 import 'package:restaurant_app/data/service/api_service.dart';
 import 'package:restaurant_app/data/model/detail_restaurant.dart';
@@ -13,6 +12,9 @@ import 'package:restaurant_app/provider/detail_restaurant_provider.dart';
 import 'package:restaurant_app/provider/review_provider.dart';
 import 'package:restaurant_app/widgets/custom_textfield.dart';
 import 'package:restaurant_app/widgets/menu_tile.dart';
+
+import '../utilities/common.dart';
+import '../utilities/style.dart';
 
 class DetailPage extends StatefulWidget {
   static const routeName = '/detail';
@@ -50,7 +52,7 @@ class _DetailPageState extends State<DetailPage> {
             horizontal: defaultMargin,
           ),
           child: Text(
-            'Daftar Makanan',
+            AppLocalizations.of(context)!.foodList,
             style: blackText.copyWith(
               fontSize: 20,
               fontWeight: semiBold,
@@ -82,7 +84,7 @@ class _DetailPageState extends State<DetailPage> {
             horizontal: defaultMargin,
           ),
           child: Text(
-            'Daftar Minuman',
+            AppLocalizations.of(context)!.drinkList,
             style: blackText.copyWith(
               fontSize: 20,
               fontWeight: semiBold,
@@ -150,7 +152,7 @@ class _DetailPageState extends State<DetailPage> {
                           ),
                           Expanded(
                             child: Text(
-                              'Detail Restaunrant',
+                              AppLocalizations.of(context)!.detailRestaurant,
                               textAlign: TextAlign.center,
                               overflow: TextOverflow.ellipsis,
                               style: closeTopImage
@@ -316,12 +318,13 @@ class _DetailPageState extends State<DetailPage> {
                               height: 5,
                             ),
                             Text(
-                              'Lihat Review',
+                              AppLocalizations.of(context)!.showReviewButton,
                               style: blackText.copyWith(
-                                fontSize: 13,
+                                fontSize: 12,
                                 fontWeight: medium,
                                 color: primaryColor,
                               ),
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ],
                         ),
@@ -338,7 +341,7 @@ class _DetailPageState extends State<DetailPage> {
                   horizontal: defaultMargin,
                 ),
                 child: Text(
-                  'Description',
+                  AppLocalizations.of(context)!.description,
                   style: blackText.copyWith(
                     fontSize: 22,
                     fontWeight: semiBold,
@@ -380,7 +383,7 @@ class _DetailPageState extends State<DetailPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Tulis Ulasan',
+                      AppLocalizations.of(context)!.createReview,
                       style: blackText.copyWith(
                         fontSize: 22,
                         fontWeight: semiBold,
@@ -390,11 +393,11 @@ class _DetailPageState extends State<DetailPage> {
                       height: 10,
                     ),
                     CustomTextField(
-                      hint: 'Name',
+                      hint: AppLocalizations.of(context)!.reviewTextLabel1,
                       controller: nameController,
                     ),
                     CustomTextField(
-                      hint: 'Ulasan',
+                      hint: AppLocalizations.of(context)!.reviewTextLabel2,
                       controller: reviewController,
                     ),
                     Align(
@@ -429,7 +432,7 @@ class _DetailPageState extends State<DetailPage> {
                             );
                           },
                           child: Text(
-                            'Kirim',
+                            AppLocalizations.of(context)!.submitButton,
                             style: whiteText.copyWith(
                               fontWeight: semiBold,
                               letterSpacing: 2,
@@ -492,7 +495,8 @@ class _DetailPageState extends State<DetailPage> {
                                   ),
                                 ),
                                 Text(
-                                  'Koneksi internet terputus',
+                                  AppLocalizations.of(context)!
+                                      .connectionErrorMessage,
                                   style: blackText.copyWith(
                                     fontSize: 16,
                                     fontWeight: semiBold,
@@ -503,7 +507,7 @@ class _DetailPageState extends State<DetailPage> {
                           )
                         : Center(
                             child: Text(
-                              'Data tidak ditemukan!',
+                              AppLocalizations.of(context)!.notFoundDataMessage,
                               style: blackText.copyWith(
                                 fontSize: 16,
                                 fontWeight: semiBold,

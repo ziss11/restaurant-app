@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/data/model/detail_restaurant.dart';
-import 'package:restaurant_app/common/style.dart';
+import 'package:restaurant_app/utilities/common.dart';
 import 'package:restaurant_app/widgets/review_card.dart';
+import '../utilities/style.dart';
 
 class ReviewPage extends StatelessWidget {
   static const routeName = '/review';
@@ -20,7 +21,7 @@ class ReviewPage extends StatelessWidget {
               expandedHeight: 55,
               flexibleSpace: FlexibleSpaceBar(
                 title: Text(
-                  'Review',
+                  AppLocalizations.of(context)!.reviewTextLabel2,
                   style: blackText.copyWith(
                     fontWeight: semiBold,
                     fontSize: 22,

@@ -15,7 +15,8 @@ class ReviewProvider extends ChangeNotifier {
     required this.apiService,
   });
 
-  Review get customerReview => _customerReview!;
+  Review get customerReview =>
+      _customerReview == null ? Review.fromJson({}) : _customerReview!;
   String get message => _message!;
   ReviewState get state => _state!;
 

@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/pages/main_page.dart';
-import 'package:restaurant_app/common/style.dart';
+import '../utilities/style.dart';
 
 class SplashScreen extends StatefulWidget {
   static const routeName = '/splash';

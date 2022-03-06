@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:restaurant_app/provider/page_provider.dart';
-import 'package:restaurant_app/common/style.dart';
+import '../utilities/style.dart';
 
 class CustomNavBar extends StatefulWidget {
   @override

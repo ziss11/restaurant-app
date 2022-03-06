@@ -2,7 +2,9 @@ import 'package:android_alarm_manager_plus/android_alarm_manager_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:provider/provider.dart';
-import 'package:restaurant_app/common/navigation.dart';
+import 'package:restaurant_app/provider/localizations_provider.dart';
+import 'package:restaurant_app/utilities/common.dart';
+import 'package:restaurant_app/utilities/navigation.dart';
 import 'package:restaurant_app/data/helper/notifications_helper.dart';
 import 'package:restaurant_app/data/helper/preference_helper.dart';
 import 'package:restaurant_app/data/service/api_service.dart';
@@ -17,7 +19,7 @@ import 'package:restaurant_app/provider/database_provider.dart';
 import 'package:restaurant_app/provider/page_provider.dart';
 import 'package:restaurant_app/provider/preference_provider.dart';
 import 'package:restaurant_app/provider/restaurant_provider.dart';
-import 'package:restaurant_app/common/style.dart';
+import 'package:restaurant_app/utilities/style.dart';
 import 'package:restaurant_app/provider/review_provider.dart';
 import 'package:restaurant_app/provider/scheduling_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -71,9 +73,15 @@ class MyApp extends StatelessWidget {
             apiService: ApiService(),
           ),
         ),
+        ChangeNotifierProvider<LocalizationsProvider>(
+          create: (_) => LocalizationsProvider(),
+        ),
       ],
-      child: MaterialApp(
+      builder: (context, _) => MaterialApp(
         debugShowCheckedModeBanner: false,
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        locale: Provider.of<LocalizationsProvider>(context).locale,
         theme: ThemeData(
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ButtonStyle(
