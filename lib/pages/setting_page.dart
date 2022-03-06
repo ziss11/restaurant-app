@@ -41,11 +41,11 @@ class _SettingPageState extends State<SettingPage> {
                     width: 10,
                   ),
                   Expanded(
+                    flex: 3,
                     child: Text(
                       AppLocalizations.of(context)!.schedulingDailyReminder,
-                      overflow: TextOverflow.ellipsis,
                       style: blackText.copyWith(
-                        fontSize: 16,
+                        fontSize: 14,
                         fontWeight: medium,
                       ),
                     ),

@@ -14,7 +14,7 @@
   "favorite": "Favorite",
   "settings": "Settings",
   "language": "Language",
-  "schedulingDailyReminder": "Scheduling Daily Reminder",
+  "schedulingDailyReminder": "Daily Reminder",
   "connectionErrorMessage": "internet Connection Lost",
   "notFoundDataMessage": "Data not Found!",
   "notFoundSearchMessage": "Search not Found"

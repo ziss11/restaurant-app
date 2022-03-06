@@ -45,32 +45,34 @@ class _MainPageState extends State<MainPage> {
       builder: (context, state, _) => Scaffold(
         floatingActionButton: CustomNavBar(),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        body: NestedScrollView(
-          physics: BouncingScrollPhysics(),
-          headerSliverBuilder: (context, isScrolled) {
-            return [
-              SliverAppBar(
-                expandedHeight: 55,
-                flexibleSpace: FlexibleSpaceBar(
-                  title: Text(
-                    state.currentIndex == 0
-                        ? AppLocalizations.of(context)!.myRestaurant
-                        : state.currentIndex == 1
-                            ? AppLocalizations.of(context)!.favorite
-                            : AppLocalizations.of(context)!.settings,
-                    style: blackText.copyWith(
-                      fontWeight: semiBold,
-                      fontSize: 22,
+        body: SafeArea(
+          child: NestedScrollView(
+            physics: BouncingScrollPhysics(),
+            headerSliverBuilder: (context, isScrolled) {
+              return [
+                SliverAppBar(
+                  expandedHeight: 55,
+                  flexibleSpace: FlexibleSpaceBar(
+                    title: Text(
+                      state.currentIndex == 0
+                          ? AppLocalizations.of(context)!.myRestaurant
+                          : state.currentIndex == 1
+                              ? AppLocalizations.of(context)!.favorite
+                              : AppLocalizations.of(context)!.settings,
+                      style: blackText.copyWith(
+                        fontWeight: semiBold,
+                        fontSize: 22,
+                      ),
+                    ),
+                    titlePadding: EdgeInsets.symmetric(
+                      horizontal: defaultMargin,
                     ),
                   ),
-                  titlePadding: EdgeInsets.symmetric(
-                    horizontal: defaultMargin,
-                  ),
                 ),
-              ),
-            ];
-          },
-          body: buildContent(state.currentIndex),
+              ];
+            },
+            body: buildContent(state.currentIndex),
+          ),
         ),
       ),
     );

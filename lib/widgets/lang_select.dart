@@ -22,7 +22,7 @@ class LanguageSelect extends StatelessWidget {
         Text(
           AppLocalizations.of(context)!.language,
           style: blackText.copyWith(
-            fontSize: 16,
+            fontSize: 14,
             fontWeight: medium,
           ),
         ),

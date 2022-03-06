@@ -225,7 +225,7 @@ class _DetailPageState extends State<DetailPage> {
     }
 
     Widget details(DetailRestaurant restaurant) {
-      return Consumer<ReviewProvider>(builder: (context, state, _) {
+      return Consumer<DetailRestaurantProvider>(builder: (context, state, _) {
         return AnimatedContainer(
           duration: Duration(milliseconds: 300),
           margin: EdgeInsets.only(
@@ -289,7 +289,7 @@ class _DetailPageState extends State<DetailPage> {
                           Navigator.pushNamed(
                             context,
                             ReviewPage.routeName,
-                            arguments: state.customerReview,
+                            arguments: state.review,
                           );
                         },
                         child: Column(
@@ -416,11 +416,12 @@ class _DetailPageState extends State<DetailPage> {
                             ),
                           ),
                           onPressed: () {
-                            state
+                            Provider.of<ReviewProvider>(context, listen: false)
                                 .addReview(restaurant.restaurant.id,
                                     nameController.text, reviewController.text)
                                 .then(
                               (value) {
+                                state.review = value;
                                 Navigator.pushNamed(
                                   context,
                                   ReviewPage.routeName,
